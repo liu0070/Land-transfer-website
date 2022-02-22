@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>注册</title>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel='stylesheet' href='/static/layui/css/http_cdnjs.cloudflare.com_ajax_libs_materialize_0.97.0_css_materialize.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel="stylesheet" href="/static/layui/css/registerstyle.css">
+
+</head>
+<!-- partial:index.partial.html -->
+<body ng-controller="RegisterCtrl" ng-app="myApp">
+ <div class="container">
+   <div id="signup">
+      <div class="signup-screen">
+         <div class="space-bot text-center">
+            <h1>注册</h1>
+           <div class="divider"></div>
+         </div>
+           <form class="form-register" method="post" name="register" action="/users/register/">
+	            <div class="input-field col s6">
+              <input id="username" type="text" class="validate" name="username" required>
+              <label for="first-name">用户名</label>
+            </div>
+             <div class="input-field col s6">
+              <input id="email" type="email" name="email" ng-model="email" class="validate" required>
+              <label for="email">Email</label>
+             </div>
+	<div class="input-field col s6">
+              <input id="mobile" type="text" name="mobile"  class="validate" required>
+              <label for="mobile">手机号码</label>
+             </div>
+             <p class="alert alert-danger" ng-show="form-register.email.$error.email">Your email is invalid.</p>
+             <div class="input-field col s6">
+               <input id="password" type="password" name="password" ng-model="password" ng-minlength='6' class="validate" required>
+               <label for="password">密码</label>
+              </div>
+              <p class="alert alert-danger" ng-show="form-register.password.$error.minlength || form.password.$invalid">Your password must be at least 6 characters.</p>
+              <div class="space-top text-center">
+               <button ng-disabled="form-register.$invalid" class="waves-effect waves-light btn done">
+               <i class="material-icons left">done</i> Done
+               </button>
+               <button type="button" class="waves-effect waves-light btn cancel">
+               <i class="material-icons left">clear</i>Cancel
+               </button>
+                  <input type="submit" value="注册" class="waves-effect waves-light btn done">
+              </div>
+               <p class="message">Already registered? <a href="/users/login">Sign In</a></p>
+             </form>
+           </div>
+        </div>
+    </div>
+</body>
+<!-- partial -->
+<script src='/static/layui/http_code.jquery.com_jquery-2.1.4.js'></script>
+<script src='/static/layui/http_cdnjs.cloudflare.com_ajax_libs_materialize_0.97.0_js_materialize.js'></script>
+<script src='/static/layui/angular.min.js'></script>
+<script  src="/static/layui/registerscript.js"></script>
+</html>

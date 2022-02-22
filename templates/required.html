@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>快速找地</title>
+		<link rel="stylesheet" type="text/css" href="/static/layui/css/css_required/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/static/layui/css/css_required/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/static/layui/css/css_required/component.css" />
+		<link rel="stylesheet" type="text/css" href="/static/layui/css/css_required/cs-select.css" />
+		<link rel="stylesheet" type="text/css" href="/static/layui/css/css_required/cs-skin-boxes.css" />
+		<script src="/static/js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<div class="container">
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h1 >快速找地</h1>
+				</div>
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" method="post" action="/need/">
+					<ol class="fs-fields">
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">您的名字?</label>
+							<input class="fs-anim-lower" id="q1" name="name" type="text" placeholder="Dean Moriarty" required/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">您的联系方式是?</label>
+							<input class="fs-anim-lower" id="q2" name="mobile" type="" placeholder="dean@road.us" required/>
+						</li>
+						
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" data-info="This will help us know what kind of service you need">您预期的土地流转经营方式是?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q3c" name="method" type="radio" value="租地"/><label for="q3c" class="radio-rent">租地</label></span>
+								<span><input id="q3a" name="method" type="radio" value="承包"/><label for="q3a" class="radio-contract">承包</label></span>
+								<span><input id="q3b" name="method" type="radio" value="合作"/><label for="q3b" class="radio-join">合作</label></span>
+								<span><input id="q3e" name="method" type="radio" value="交换"/><label for="q3e" class="radio-exchange">交换</label></span>
+                                <span><input id="q3d" name="method" type="radio" value="其他"/><label for="q3d" class="radio-other">其他</label></span>
+							</div>
+						</li>
+                        <li>
+							<label class="fs-field-label fs-anim-upper" for="q5">您预期的土地优选范围</label>
+							<div class="row">
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>省：
+                                <input class="fs-province-mark fs-anim-lower" id="q5" name="province" type="text" placeholder="填写省份"/>
+                                    </div>
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>市：
+                                    <input class="fs-city-mark fs-anim-lower" id="q5" name="city" type="text" placeholder="填写市"/>
+                                    </div>
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>县/区：
+                                    <input class="fs-countryside-mark fs-anim-lower" id="q5" name="countryside" type="text" placeholder="填写辖区/县"/>
+                                    </div>
+							</div>
+						</li>
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">选择您的土地类型.</label>
+							<select class="cs-select cs-skin-boxes fs-anim-lower" name="type">
+								<option value="">请选择土地类型</option>
+              								<option value="耕地">耕地</option>
+              								<option value="林地">林地</option>
+              								<option value="园地">园地</option>
+              								<option value="草地">草地</option>
+              								<option value="养殖用地">养殖用地</option>
+              								<option value="住宅用地">住宅用地</option>
+              								<option value="工矿存储">工矿存储</option>
+              								<option value="商服用地">商服用地</option>
+             								<option value="公共用地">公共用地</option>
+              								<option value="农房">农房（宅基地）</option>
+              								<option value="水域">水域</option>
+             							 	<option value="其他用地">其他用地</option>
+							</select>
+						</li>
+                        <li>
+							<label class="fs-field-label fs-anim-upper" for="q7">您预期承包土地大小(注意此处以亩为单位)</label>
+							<div class="row">
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>上限：
+                                <input class="fs-land-mark fs-anim-lower" id="q7" name="size_min" type="number" placeholder="1000" step="10" min="100"/>
+                                    </div>
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>下限：
+                                    <input class="fs-land-mark fs-anim-lower" id="q7" name="size_max" type="number" placeholder="1000" step="10" min="100"/>
+                                    </div>
+							</div>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q4">您对土地预期的补充(选填)</label>
+							<textarea class="fs-anim-lower" id="q4" name="dis" placeholder="Describe here"></textarea>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q5">您预期的价格范围（一亩一年多少钱）</label>
+							<div class="row">
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>上限：
+                                <input class="fs-mark fs-anim-lower" id="q5" name="value_min" type="number" placeholder="1000" step="10" min="100"/>
+                                    </div>
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>下限：
+                                    <input class="fs-mark fs-anim-lower" id="q5" name="value_max" type="number" placeholder="1000" step="10" min="100"/>
+                                    </div>
+							</div>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q6">您预期的年限</label>
+							<div class="row">
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>上限：
+                                <input class="fs-year-mark fs-anim-lower" id="q6" name="year_min" type="number" placeholder="1" step="1" min="1"/>
+                                    </div>
+                                <div>
+                                    <label class="form-inline fs-anim-lower"/>下限：
+                                    <input class="fs-year-mark fs-anim-lower" id="q6" name="year_max" type="number" placeholder="1" step="1" min="1"/>
+                                    </div>
+							</div>
+						</li>
+					</ol><!-- /fs-fields -->
+                    <div style="text-align: center">
+					<button class="fs-submit" type="submit">提交</button>
+                    </div>
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+		</div><!-- /container -->
+		<script src="/static/js/classie.js"></script>
+		<script src="/static/js/selectFx.js"></script>
+		<script src="/static/js/fullscreenForm.js"></script>
+		<script>
+			(function() {
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+					}
+				} );
+			})();
+		</script>
+	</body>
+</html>

@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'Land_web_new.land',
+    'land',
     'users',
     'simpleui',
     'django.contrib.admin',

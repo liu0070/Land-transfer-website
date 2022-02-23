@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>个人主页</title>
+	<link rel="stylesheet" type="text/css" href="/static/user_css/default.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,700">
+  	<link rel="stylesheet" href="/static/user_css/style.min.css">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <style type="text/css">
+		.demo{padding: 2em 0;}
+		.our-team{
+		    padding: 30px 0 40px;
+		    background: #f7f5ec;
+		    text-align: center;
+		    overflow: hidden;
+		    position: relative;
+		}
+		.our-team .pic{
+		    display: inline-block;
+		    width: 130px;
+		    height: 130px;
+		    margin-bottom: 50px;
+		    z-index: 1;
+		    position: relative;
+		}
+		.our-team .pic:before{
+		    content: "";
+		    width: 100%;
+		    height: 0;
+		    border-radius: 50%;
+		    background: #ee4266;
+		    position: absolute;
+		    bottom: 135%;
+		    right: 0;
+		    left: 0;
+		    opacity: 0.2;
+		    transform: scale(3);
+		    transition: all 0.3s linear 0s;
+		}
+		.our-team:hover .pic:before{ height: 100%; }
+		.our-team .pic:after{
+		    content: "";
+		    width: 100%;
+		    height: 100%;
+		    border-radius: 50%;
+		    background: #ee4266;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    z-index: -1;
+		}
+		.our-team .pic img{
+		    width: 100%;
+		    height: auto;
+		    border-radius: 50%;
+		    transform: scale(1);
+		    transition: all 0.9s ease 0s;
+		}
+		.our-team:hover .pic img{
+		    box-shadow: 0 0 0 14px #f7f5ec;
+		    transform: scale(0.7);
+		}
+		.our-team .team-content{ margin-bottom: 30px; }
+		.our-team .title{
+		    font-size: 22px;
+		    font-weight: 700;
+		    color: #4e5052;
+		    letter-spacing: 1px;
+		    text-transform: capitalize;
+		    margin-bottom: 5px;
+		}
+		.our-team .post{
+		    display: block;
+		    font-size: 15px;
+		    color: #4e5052;
+		    text-transform:capitalize;
+		}
+		.our-team .social{
+		    width: 100%;
+		    padding: 0;
+		    margin: 0;
+		    background: #eb1768;
+		    position: absolute;
+		    bottom: -100px;
+		    left: 0;
+		    transition: all 0.5s ease 0s;
+		}
+		.our-team:hover .social{ bottom: 0; }
+		.our-team .social li{ display: inline-block; }
+		.our-team .social li a{
+		    display: block;
+		    padding: 10px;
+		    font-size: 17px;
+		    color: #fff;
+		    transition: all 0.3s ease 0s;
+		}
+		.our-team .social li a:hover{
+		    color: #eb1768;
+		    background: #f7f5ec;
+		}
+		@media only screen and (max-width: 990px){
+		    .our-team{ margin-bottom: 30px; }
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper" class="wrapper">
+	  <header class="header htmleaf-header">
+			<h1>个人主页<span>Your homepage</span></h1>
+		</header>
+	  <main>
+	    <div class="container">
+	      <section>
+	        <h1 style="text-align: center;color: red;size: A3">欢迎</h1>
+	        <div id="github-icons"></div>
+            <div class="demo">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-3 col-sm-6">
+		                    <div class="our-team">
+		                        <div class="pic">
+		                            <img src="/static/user_image/发布土地.png">
+		                        </div>
+		                        <div class="team-content">
+		                             <h3 class="title"><a href="#" >发布土地信息</a></h3>
+		                        </div>
+		                        <ul class="social">
+		                          <li><a href="#" class="">点击发布土地信息</a></li>
+		                        </ul>
+		                    </div>
+		                </div>
+
+		                <div class="col-md-3 col-sm-6">
+		                    <div class="our-team">
+		                        <div class="pic">
+		                            <img src="/static/user_image/经营信息-土地转让,土地出让成交,土地出让结果.png">
+		                        </div>
+		                        <div class="team-content">
+		                            <h3 class="title"><a href="#" >快速找地</a></h3>
+		                        </div>
+		                        <ul class="social">
+		                            <li><a href="#" class="">点击提交土地需求</a></li>
+		                        </ul>
+		                    </div>
+		                </div>
+
+		                <div class="col-md-3 col-sm-6">
+		                    <div class="our-team">
+		                        <div class="pic">
+		                            <img src="/static/user_image/土地.png">
+		                        </div>
+		                        <div class="team-content">
+		                            <h3 class="title"><a href="#" >信息推荐</a></h3>
+		                        </div>
+		                        <ul class="social">
+		                           <li><a href="#" class="">点击查看系统根据您的土地信息推荐的结果</a></li>
+		                        </ul>
+		                    </div>
+		                </div>
+
+		              <div class="col-md-3 col-sm-6">
+		                    <div class="our-team">
+		                        <div class="pic">
+		                            <img src="/static/user_image/私信.png">
+		                        </div>
+		                        <div class="team-content">
+		                            <h3 class="title"><a href="#" >私信</a></h3>
+		                        </div>
+		                        <ul class="social">
+		                           <li><a href="#" class="">查看您收到的私信</a></li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+	      </section>
+	    </div>
+	  </main>
+	</div><!-- /wrapper -->
+
+	<button id="mm-menu-toggle" class="mm-menu-toggle">Toggle Menu</button>
+	<nav id="mm-menu" class="mm-menu">
+	  <div class="mm-menu__header">
+	    <h2 class="mm-menu__title">{{ username }}</h2>
+	  </div>
+	  <ul class="mm-menu__items">
+	    <li class="mm-menu__item">
+	      <a class="mm-menu__link" href="#">
+	        <span class="mm-menu__link-text"><i class="md md-home"></i>返回主页</span>
+	      </a>
+	    </li>
+          <li class="mm-menu__item">
+	      <a class="mm-menu__link" href="#">
+	        <span class="mm-menu__link-text"><i class="md md-home"></i>已提交的需求</span>
+	      </a>
+	    </li>
+          <li class="mm-menu__item">
+	      <a class="mm-menu__link" href="#">
+	        <span class="mm-menu__link-text"><i class="md md-home"></i>发布的土地信息</span>
+	      </a>
+	    </li>
+	    <li class="mm-menu__item">
+	      <a class="mm-menu__link" href="#">
+	        <span class="mm-menu__link-text"><i class="md md-person"></i>修改密码</span>
+	      </a>
+	    </li>
+	    <li class="mm-menu__item">
+	      <a class="mm-menu__link" href="#">
+	        <span class="mm-menu__link-text"><i class="md md-inbox"></i>退出登录</span>
+	      </a>
+	    </li>
+	  </ul>
+	</nav><!-- /nav -->
+
+	<script src="/static/user_js/production/materialMenu.min.js"></script>
+	<script>
+	  var menu = new Menu;
+	</script>
+</body>
+</html>
